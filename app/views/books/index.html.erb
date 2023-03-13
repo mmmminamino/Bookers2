@@ -4,7 +4,7 @@
     <%= book.title %>
   <%end%>
   
-  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) % %></p>
+  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
   <p>name：<%= book.user.name %></p>
   <p>opinion：<%= book.body %></p>
   <% if @book.user == current_user %>
