@@ -1,26 +1,69 @@
-<h2>Log in</h2>
-
-<%= form_with model: @user, url: user_session_path do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+  <head>
+        <link rel="stylesheet" media="all" data-turbolinks-track="reload">
+        <script data-turbolinks-track="reload"></script>
+        <title>Bookers2Ver2</title>
+        <meta name="csrf-param">
+        <meta name="csrf-token">
+        <meta name="viewport">
+  </head>
+  
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand"><span>Bookers2</span></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a class="navbar-nav ml-auto"></a></li>
+                        <li><a class="nav-link text-light" href="/home/about"></a></li>
+                        <li><a class="nav-link text-light" href="/users/sign up"></a></li>
+                        <li><a class="nav-link text-light" href="/users/sign in"></a></li>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+      <p id="notice">Signed out successfully.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+            <h2>Log in</h2>
+            <%= form_with model: @user, url: user_session_path do |f| %>
+            <div class="field">
+              <%= f.label :name %><br />
+              <%= f.email_field :name, autofocus: true, autocomplete: "name" %>
+            </div>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+            <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+            <% end %>
+            <div class="actions">
+              <%= f.submit "Log in" %>
+            </div>
+            <% end %>
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+        <div class="container mt-5">
+          <div class="row">
+              <div class="mx-auto"><p>CopyRight Infratop.inc</p></div>
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    flash[:notice] = "Welcome! You have signed up successfully."
   end
   
   
