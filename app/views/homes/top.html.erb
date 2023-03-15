@@ -2,7 +2,7 @@
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
     <head>
         <link rel="stylesheet" media="all" data-turbolinks-track="reload">
-        <script data-turbolinks-track="reload"></script>
+        <script src="https://kit.fontawesome.com/91859b3e97.js" crossorigin="anonymous"></script>
         <style type="text/css"></style>
         <title>Bookers2Ver2</title>
         <meta name="csrf-param">
@@ -32,41 +32,29 @@
             <p id="notice"></p>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
-                        <h2>Sign up</h2>
-                        <form id="new_user" class="new_user" action="/users" accept-charset="UTF-8" method="post">
-                            <input type="hidden">
-                            <div class="field">
-                                <label for="user_name">Name</label><br>
-                                <input autofocus="autofocus" class="name" type="text" name="user[name]" id="user_name">
+                    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+                        <h1>Welcome to<i class="fa-solid fa-book"></i><strong>Bookers!!</strong></h1>
+                        <p>In<i class="fa-solid fa-book"></i><strong>Bookers</strong>,</p>
+                        <p>you can share and exchange your opinions , inpressions , and emotions</p>
+                        <p>about various books!</p>
+                        <div class="btn-wrapper col-10 mx-auto">
+                            <div class="row">
+                                <a class="btn btn-info btn-sm btn-block mb-3 sign_in" href="/users/sign in">Log in</a>
                             </div>
-                            <div class="field">
-                                <label for="user_email">Email</label><br>
-                                <input autofocus="autofocus" class="email" type="email" value name="user[email]" id="user_email">
+                            <div class="row">
+                                <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign up">Sign up</a>
                             </div>
-                            <div class="field">
-                                <label for="user_password">Password (6 characters minimum)</label><br>
-                                <input autocomplete="off" class="password" type="password" name="user[password]" id="user_password">
-                            </div>
-                            <div class="field">
-                                <label for="user_password_confirmation">Password confirmation</label><br>
-                                <input autocomplete="off" class="password_confirm" type="password" name="user[password_confirmation]" id="user_password_confirmation">
-                            </div>
-                            <div class="actions">
-                                <input type="submit" name="commit" value="Sign up" class="btn btn-sm btn-success" data-disable-with="Sign up">
-                            </div>
-                        </form>
-                        <a href="/users/sign in">Log in</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
         <footer>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="mx-auto"><p>CopyRight Infratop.inc</p></div>
-                </div>
+          <div class="container mt-5">
+            <div class="row">
+                <div class="mx-auto"><p>CopyRight Infratop.inc</p></div>
             </div>
+          </div>
         </footer>
     </body>
 </html>

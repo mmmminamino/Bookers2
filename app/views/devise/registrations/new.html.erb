@@ -1,34 +1,72 @@
-<h2>Sign up</h2>
-
-<%= form_with model: @user,url: user_registration_path do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+    <head>
+        <link rel="stylesheet" media="all" data-turbolinks-track="reload">
+        <script src="https://kit.fontawesome.com/91859b3e97.js" crossorigin="anonymous"></script>
+        <style type="text/css"></style>
+        <title>Bookers2Ver2</title>
+        <meta name="csrf-param">
+        <meta name="csrf-token">
+        <meta name="viewport">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand"><span>Bookers2</span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <li><a class="navbar-nav ml-auto"></a></li>
+                            <li><a class="nav-link text-light" href="/home/about">"Home"</a></li>
+                            <li><a class="nav-link text-light" href="/users/sign up">"Sign up"</a></li>
+                            <li><a class="nav-link text-light" href="/users/sign in">"Sign in"</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <p id="notice"></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+                        <h2>Sign up</h2>
+                        <form id="new_user" class="new_user" action="/users" accept-charset="UTF-8" method="post">
+                            <input type="hidden">
+                            <div class="field">
+                                <label for="user_name">Name</label><br>
+                                <input autofocus="autofocus" class="name" type="text" name="user[name]" id="user_name">
+                            </div>
+                            <div class="field">
+                                <label for="user_email">Email</label><br>
+                                <input autofocus="autofocus" class="email" type="email" value name="user[email]" id="user_email">
+                            </div>
+                            <div class="field">
+                                <label for="user_password">Password (6 characters minimum)</label><br>
+                                <input autocomplete="off" class="password" type="password" name="user[password]" id="user_password">
+                            </div>
+                            <div class="field">
+                                <label for="user_password_confirmation">Password confirmation</label><br>
+                                <input autocomplete="off" class="password_confirm" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+                            </div>
+                            <div class="actions">
+                                <input type="submit" name="commit" value="Sign up" class="btn btn-sm btn-success" data-disable-with="Sign up">
+                            </div>
+                        </form>
+                        <a href="/users/sign in">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="mx-auto"><p>CopyRight Infratop.inc</p></div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
