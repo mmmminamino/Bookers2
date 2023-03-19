@@ -1,18 +1,57 @@
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <% if @user == current_user.id %>
-  <p><%= link_to "User編集", edit_user_path(@user) %></p>
-  <%end%>
-</div>
-
-<!-- ユーザーの投稿一覧 -->
-
-<% @books.each do |book| %>
-<div>
-  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p>name：<%= book.user.name %></p>
-  <p>title：<%= book.title %></p>
-  <p>opinion：<%= book.body %></p>
-</div>
-<% end %>
+<!DOCTYPE html>
+<html lang="ja">
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bookers2Ver2</title>
+        <meta name="csrf-param" content="authenticity_token">
+        <meta name="csrf-token">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://kit.fontawesome.com/91859b3e97.js" crossorigin="anonymous"></script>
+        <style type="text/css"></style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+       <header>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <span>Bookers</span>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a class="nav-link text-light" href="/users/:id"><i class="fa-solid fa-house"></i>Home</a></li>
+                        <li><a class="nav-link text-light" href="/users"><i class="fa-solid fa-link"></i>Users</a></li>
+                        <li><a class="nav-link text-light" href="/books"><i class="fa-solid fa-book-open"></i>Books</a></li>
+                        <li><a class="nav-link text-light" href="/homes/about"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                   </ul>
+                </div>
+            </div>
+         </nav>
+       </header>
+       <main>
+         <p id="notice">Welcome! You have signed up successfully.</p>
+          <%= render 'books/list', books: @books %>
+             <div class="col-md-8 offset-md-1">
+               <% @books.each do |book| %>
+                 <h2>Books</h2>
+                 <table class="table table-hover table-inverse">
+                   <thead>
+                     <tr>
+                       <th></th>
+                       <th>Title<br>
+                       <th><%= book.title %></th>
+                       <th>Opinion<br><p><%= book.body %></p></th>
+                       <th colspan="3"></th>
+                     </tr>
+                   </thead>
+                   <tbody></tbody>
+                 </table>
+               <%end%>
+             </div>
+           </div>
+         </div>
+       </main>
