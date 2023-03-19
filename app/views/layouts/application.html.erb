@@ -5,9 +5,12 @@
         <script src="https://kit.fontawesome.com/91859b3e97.js" crossorigin="anonymous"></script>
         <style type="text/css"></style>
         <title>Bookers2Ver2</title>
-        <meta name="csrf-param" content="authenticity_token">
-        <meta name="csrf-token">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     </head>
+    
   <%= yield %>
 </html>
