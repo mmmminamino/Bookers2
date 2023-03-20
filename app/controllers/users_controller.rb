@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @books=Book.all
+    @user=current_user
+    @users=User.all
+    @book=Book.new
   end
   
   def create
@@ -16,7 +20,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @user=User.find(params[:id])
     @books=Book.all
     @book=Book.new
   end
