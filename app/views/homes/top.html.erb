@@ -3,7 +3,9 @@
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
     <body>
         <main>
-            <p id="notice">Signed out successfully.</p>
+            <div>
+              <%= flash[:notice] %>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
@@ -17,7 +19,6 @@
                             </div>
                             <div class="row">
                               <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign up</a>
-                              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
                             </div>
                         </div>
                     </div>
