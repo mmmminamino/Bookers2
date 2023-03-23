@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user=current_user
+    @user=User.find(params[:id])
     @user.update(user_params)
     if @user.update(user_params)
       flash[:notice] ="You have updated user successfully."
