@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     @user=current_user
     @books=Book.all
-    @book=Book.new
+    @book_new=Book.new
   end
 
   def edit

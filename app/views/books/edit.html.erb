@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
                 <h2>Editing Book</h2>
-                      <%= form_with model: @book, url:edit_book_path, do |f| %>
+                  <%= form_with model: @book do |f| %>
                         <div class="form group">
                           <label for="book_title">Title</label><br>
                           <%= f.text_field :title, autofocus: true, id:"book_title" %>
@@ -17,15 +17,14 @@
                           <label for="book_opinion">Opinion</label><br>
                           <%= f.text_area :body, autofocus: true %>
                         </div>
-                        <%= f.submit 'Update Book', class: "btn btn-success"%>
-                      <% end %>
-                      <%= link_to 'Show', book_path %>
-                      <%= link_to 'Back', books_path %>
+                        <%= f.submit 'Update Book',  class: "btn btn-success"%>
+                  <% end %>
+                  <%= link_to 'Show', book_path %>
+                  <%= link_to 'Back', books_path %>
               </div>
             </div>
           </div>
-            
-</main>
+       </main>
        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
