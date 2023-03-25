@@ -38,8 +38,8 @@ class UsersController < ApplicationController
   
   def is_matching_login_user
     user = User.find(params[:id])
-    unless user.id == current_user.id
-      redirect_to post_images_path
+    unless user.id=current_user.id
+      redirect_to users_path
     end
   end
 end
