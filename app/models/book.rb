@@ -9,6 +9,8 @@ class Book < ApplicationRecord
     image
   end
   
+  
+  
   validates :title, presence: true
   validates :body, presence: true, length: { maximum: 200 }
   
